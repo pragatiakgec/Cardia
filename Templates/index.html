@@ -1,0 +1,487 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+    	<title>Cardia Bot</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/nice-select.css') }}">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/font-awesome.min.css') }}">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/icofont.css') }}">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/slicknav.min.css') }}">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/owl-carousel.css') }}">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/datepicker.css') }}">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/animate.min.css') }}">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/magnific-popup.css') }}">
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">
+		<style type="text/css">
+			.appointment {
+				    background: #fff;
+				    padding-top: 50px;
+				}
+				
+				select{
+					width: 100%;
+				    height: 50px;
+				    border: 1px solid #eee;
+				    text-transform: capitalize;
+				    padding: 0px 18px;
+				    color: #555;
+				    font-size: 14px;
+				    font-weight: 400;
+				    border-radius: 0;
+				    border-radius: 4px;
+				}
+		</style>
+    </head>
+    <body>
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+		
+
+	
+		<!-- Header Area -->
+		<header class="header" >
+			<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<!-- Start Logo -->
+								<div class="logo">
+									<a href="index.html"><img src="{{ url_for('static', filename = 'img/logo.png') }}" alt="#"></a>
+								</div>
+								<!-- End Logo -->
+								<!-- Mobile Nav -->
+								<div class="mobile-nav"></div>
+								<!-- End Mobile Nav -->
+							</div>
+							<div class="col-lg-7 col-md-9 col-12">
+								<!-- Main Menu -->
+								<div class="main-menu">
+									<nav class="navigation">
+										<ul class="nav menu">
+											<li><a href="{{ url_for('main') }}">Home </a></li>
+											<li><a href="{{ url_for('aboutus') }}">About Us </a></li>
+											<li><a href="{{ url_for('services') }}">Services </a></li>
+											<li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+										</ul>
+									</nav>
+								</div>
+								<!--/ End Main Menu -->
+							</div>
+							<div class="col-lg-2 col-12">
+								<div class="get-quote">
+									<a href="#authform" class="btn">Get Started!</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!-- End Header Area -->
+		
+		<!-- Slider Area -->
+		<section class="slider">
+			<div class="hero-slider">
+				<!-- Start Single Slider -->
+				<div class="single-slider" style="background-image:url('{{ url_for('static', filename = 'img/slider3.jpg') }}')">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-7">
+								<div class="text">
+									<h1>We Provide <span>Medical</span> Services That You Can <span>Trust!</span></h1>
+									<p>Let's pledge to love our hearts by making healthy choices every day</p>
+									<div class="button" id="authform">
+										<a href="#authform" class="btn">Get Started!</a>
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Single Slider -->
+			</div>
+		</section>
+		<!--/ End Slider Area -->
+		
+		<!-- Start Schedule Area -->
+		<section class="schedule" style="padding: 20px 0px !important">
+			<div class="container">
+				<div class="schedule-inner">
+					<div class="row">
+						<div class="col-lg-3 col-md-3 col-12 ">
+							
+						</div>
+						<div class="col-lg-6 col-md-6 col-12">
+							<!-- single-schedule -->
+
+							<div class="single-schedule middle" >
+								<div class="inner">
+									<div class="icon">
+										<i class="icofont-prescription"></i>
+									</div>
+									<div class="single-content">
+										<span>Join Signin to countinue!</span>
+										<h4 id="authconthead">Signin With your credentials</h4>
+										<style type="text/css">
+											input, button, select{
+												width: 80% !important;
+    											padding: 5px !important;
+    											outline: none !important;;
+											}
+											.link{
+												cursor: pointer;
+											}
+										</style>
+										
+										<form class="form" action="#" style="margin-top: 20px">
+											<div class="row" id="siginform">
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<span class="errormessage" style="color: #ff8ba1; font-weight: bold; display: none;"></span><br>
+													<div class="form-group">
+														<input type="text" id="signphone" placeholder="Registered Phone Number">
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<div class="form-group">
+														<input type="password" id="signpassword" placeholder="Your Password">
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center" style="margin-top: 15px">
+													<div class="form-group">
+														<button type="button" class="btn info" style="background: #2C2D3F" id="signin-btn">Signin</button>
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<p class="link" id="reglink">Not Joined? <b>Join us here!</b></p>
+												</div>
+											</div>
+
+											<div class="row" id="registerform" style="display: none;">
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<span class="errormessage" style="color: #ff8ba1; font-weight: bold; display: none;"></span><br>
+													<div class="form-group">
+														<input type="text"  placeholder="Your Name" id="regusername">
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<div class="form-group">
+														<input type="text"  placeholder="Your Phone" id="regphone">
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<div class="form-group">
+														<input type="text" placeholder="Your Email" id="regemail">
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<div class="form-group">
+														<input type="text"  placeholder="Your Address" id="regaddress">
+													</div>
+												</div>
+
+												<div class="col-lg-1 col-md-1 col-1 text-center">
+												</div>
+												<div class="col-lg-5 col-md-5 col-5 text-center">
+													<div class="form-group">
+														<input type="text" id="regage" placeholder="Your Age" style="width: 92% !important">
+													</div>
+												</div>
+
+												<div class="col-lg-5 col-md-5 col-5 text-center">
+													<div class="form-group">
+														<select id="reggender" style="width: 90% !important; padding: 0px; height: 36px">
+															<option value="">Gender</option>
+															<option value="Male">Male</option>
+															<option value="Female">Female</option>
+															<option value="Others">Others</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-1 col-md-1 col-1 text-center">
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<div class="form-group">
+														<input type="password" id="regpassword" placeholder="Your Password">
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center" style="margin-top: 15px">
+													<div class="form-group">
+														<button type="button" class="btn info" style="background: #2C2D3F" id="signup-btn">Sign Up</button>
+													</div>
+												</div>
+
+												<div class="col-lg-12 col-md-12 col-12 text-center">
+													<p class="link" id="loglink">Already Joined? <b>Login here!</b></p>
+												</div>
+
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-md-3 col-12">
+							
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/End Start schedule Area -->
+
+		<!-- Start Feautes -->
+		<section class="Feautes section" style="padding: 20px 0px !important">
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-lg-4 col-12">
+						<!-- Start Single features -->
+						<div class="single-features">
+							<div class="signle-icon">
+								<i class="icofont icofont-stethoscope"></i>
+							</div>
+							<h3>Diagnose</h3>
+							<p>Diagnose your heart health!</p>
+						</div>
+						<!-- End Single features -->
+					</div>
+					<div class="col-lg-4 col-12">
+						<!-- Start Single features -->
+						<div class="single-features">
+							<div class="signle-icon">
+								<i class="icofont icofont-lamp"></i>
+							</div>
+							<h3>Consult</h3>
+							<p>Consult with our bot!</p>
+						</div>
+						<!-- End Single features -->
+					</div>
+					<div class="col-lg-4 col-12">
+						<!-- Start Single features -->
+						<div class="single-features last">
+							<div class="signle-icon">
+								<i class="icofont icofont-loop"></i>
+							</div>
+							<h3>Be Protected!</h3>
+							<p>Get a secured and friendly health monitoring!</p>
+						</div>
+						<!-- End Single features -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--/ End Feautes -->
+		
+		<!-- Start Fun-facts -->
+		<div id="fun-facts" class="fun-facts section overlay">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont icofont-home"></i>
+							<div class="content">
+								<span class="counter">3468</span>
+								<p>Clients</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont icofont-user-alt-3"></i>
+							<div class="content">
+								<span class="counter">557</span>
+								<p>Patients</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont-simple-smile"></i>
+							<div class="content">
+								<span class="counter">4379</span>
+								<p>Reports</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+					<div class="col-lg-3 col-md-6 col-12">
+						<!-- Start Single Fun -->
+						<div class="single-fun">
+							<i class="icofont icofont-table"></i>
+							<div class="content">
+								<span class="counter">32</span>
+								<p>Years of Experience</p>
+							</div>
+						</div>
+						<!-- End Single Fun -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--/ End Fun-facts -->
+
+
+		<!-- jquery Min JS -->
+        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+
+		<script src="{{ url_for('static', filename = 'js/jquery-ui.min.js') }}"></script>
+		<!-- Easing JS -->
+        <script src="{{ url_for('static', filename = 'js/easing.js') }}"></script>
+		<!-- Color JS -->
+		<script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="{{ url_for('static', filename = 'js/bootstrap-datepicker.js') }}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+		<!-- Main JS -->
+		<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#reglink").click(function(){
+					$("#registerform").show();
+					$("#siginform").hide();
+					$("#authconthead").html("Register with us");
+				});
+
+				$("#loglink").click(function(){
+					$("#registerform").hide();
+					$("#siginform").show();
+					$("#authconthead").html("Signin With your credentials");
+				});
+
+				$("#signin-btn").click(function(){
+					var signphone = $("#signphone").val();
+					var signpassword = $("#signpassword").val();
+					if (signphone == ''){
+						message("Enter the phone!")
+					}else if(signpassword == ''){
+						message("Enter the password!")
+					}else{
+						$.ajax({
+		                    url:"/login", 
+		                    type: "post", 
+		                    dataType: 'json',
+		                    data: {"signphone":signphone, "signpassword":signpassword},
+		                      success: function(output){
+		                        if (output == 0){
+		                          message('Username and Password does not match!')
+		                        }else if (output == 1){
+		                          location.href = "{{ url_for('detect') }}"
+		                        }
+		                      }
+		                    });
+					}
+				});
+
+				$("#signup-btn").click(function(){
+					var regusername = $("#regusername").val();
+					var regphone = $("#regphone").val();
+					var regemail = $("#regemail").val();
+					var regpassword = $("#regpassword").val();
+					var regaddress = $("#regaddress").val();
+					var regage = $("#regage").val();
+					var reggender = $("#reggender").val();
+
+					if (regusername == ''){
+						message("Enter the Username!")
+					}else if(regphone == ''){
+						message("Enter the Phone!")
+					}else if(regemail == ''){
+						message("Enter the Email!")
+					}else if(regpassword == ''){
+						message("Enter the Password!")
+					}else if(regaddress == ''){
+						message("Enter the Address!")
+					}else if(regage == ''){
+						message("Enter the Age!")
+					}else if(reggender == ''){
+						message("Enter the Gender!")
+					}else{
+						$.ajax({
+		                    url:"/register", 
+		                    type: "post", 
+		                    dataType: 'json',
+		                    data: {"regusername":regusername, "regphone":regphone, "regemail":regemail, "regpassword":regpassword, "regaddress":regaddress, "regage":regage, "reggender":reggender},
+		                      success: function(output){
+		                        if (output == 0){
+		                          message('Username and Password does not match!')
+		                        }else if (output == 1){
+		                          message("Registration Completed! Login to continue")
+		                          $("#loglink").click()
+		                        }
+		                      }
+		                    });
+					}
+				});
+
+
+				function message(message){
+					$(".errormessage").html(message)
+					$(".errormessage").show()
+					return false
+				}
+	        });
+		</script>
+    </body>
+</html>

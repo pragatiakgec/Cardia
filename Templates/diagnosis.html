@@ -1,0 +1,737 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+    <head>
+        <!-- Meta Tags -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="keywords" content="Site keywords here">
+		<meta name="description" content="">
+		<meta name='copyright' content=''>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<!-- Title -->
+    	<title>Cardia Bot</title>
+		
+		<!-- Favicon -->
+        <link rel="icon" href="img/favicon.png">
+		
+		<!-- Google Fonts -->
+		<link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css') }}">
+		<!-- Nice Select CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/nice-select.css') }}">
+		<!-- Font Awesome CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/font-awesome.min.css') }}">
+		<!-- icofont CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/icofont.css') }}">
+		<!-- Slicknav -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/slicknav.min.css') }}">
+		<!-- Owl Carousel CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/owl-carousel.css') }}">
+		<!-- Datepicker CSS -->
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'css/datepicker.css') }}">
+		<!-- Animate CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/animate.min.css') }}">
+		<!-- Magnific Popup CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/magnific-popup.css') }}">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+		
+		<!-- Medipro CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/normalize.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'chat.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'resmodal.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'css/responsive.css') }}">
+		<style type="text/css">
+			.appointment {
+				    background: #fff;
+				    padding-top: 50px;
+				}
+				
+				select{
+					width: 100%;
+				    height: 50px;
+				    border: 1px solid #eee;
+				    text-transform: capitalize;
+				    padding: 0px 18px;
+				    color: #555;
+				    font-size: 14px;
+				    font-weight: 400;
+				    border-radius: 0;
+				    border-radius: 4px;
+				}
+				.hide{
+					display: none;
+				}
+		</style>
+    </head>
+    <body style="height: 100vh;">
+	
+		<!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+
+                <div class="indicator"> 
+                    <svg width="16px" height="12px">
+                        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+         <!-- Header Area -->
+		<header class="header" >
+			<!-- Header Inner -->
+			<div class="header-inner">
+				<div class="container">
+					<div class="inner">
+						<div class="row">
+							<div class="col-lg-3 col-md-3 col-12">
+								<!-- Start Logo -->
+								<div class="logo">
+									<a href="index.html"><img src="{{ url_for('static', filename = 'img/logo.png') }}" alt="#" height="100" width="100"></a>
+								</div>
+								<!-- End Logo -->
+								<!-- Mobile Nav -->
+								<div class="mobile-nav"></div>
+								<!-- End Mobile Nav -->
+							</div>
+							<div class="col-lg-7 col-md-9 col-12" style="display: flex;align-items: center;">
+								<!-- Main Menu -->
+								<div class="main-menu">
+									<nav class="navigation">
+										<ul class="nav menu">
+											<li><a href="{{ url_for('main') }}">Home </a></li>
+											<li><a href="{{ url_for('aboutus') }}">About Us </a></li>
+											<li><a href="{{ url_for('services') }}">Services </a></li>
+											<li><a href="{{ url_for('contactus') }}">Contact Us</a></li>
+										</ul>
+									</nav>
+								</div>
+								<!--/ End Main Menu -->
+							</div>
+							<div class="col-lg-2 col-12" style="display: flex;align-items: center;">
+								<div class="get-quote" >
+									<a href="{{ url_for('main') }}" class="btn">Go back!</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--/ End Header Inner -->
+		</header>
+		<!-- End Header Area -->
+		
+		<!-- Header Area -->
+
+		<!-- Start Appointment -->
+		<section class="appointment" style="background: #e6f4ff; height: 100vh;">
+			<div class="container text-center" >
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-12">
+						<center><h3>Diagnose Heart Disease</h3>
+						<br>
+						<label id="result" style="display: none; font-weight: bold;"></label>
+						</center>
+					</div>
+					<div class="col-lg-3 col-md-12 col-12">
+						
+					</div>
+					<div class="col-lg-6 col-md-12 col-12">
+						<form class="form" action="#">
+							<div class="row">
+
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<input type="number" id="phr" placeholder="Peripheral Heart Rate">
+									</div>
+								</div>
+
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<input type="number" id="mental" placeholder="Mental Health Rate">
+									</div>
+								</div>
+
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<select id="age" type="text" class="form-group">
+											<option>Age category</option>
+											<option value="0">18-24</option>
+											<option value="1">25-29</option>
+											<option value="2">30-34</option>
+											<option value="3">35-39</option>
+											<option value="4">40-44</option>
+											<option value="5">45-49</option>
+											<option value="6">50-54</option>
+											<option value="7">55-59</option>
+											<option value="8">60-64</option>
+											<option value="9">65-69</option>
+											<option value="10">70-74</option>
+											<option value="11">75-79</option>
+											<option value="12">80 or older</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<select id="diabetes" type="text" class="form-group">
+											<option>Diabeties Level</option>
+											<option value="0">No, borderline diabetes</option>
+											<option value="1">No</option>
+											<option value="2">Yes (during pregnancy)</option>
+											<option value="3">Yes</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<select id="stroke" type="text" class="form-group">
+											<option>Stroke</option>
+											<option value="1">Yes</option>
+											<option value="0">No</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<select id="diffwalk" type="text" class="form-group">
+											<option>Difficulty In Walking</option>
+											<option value="1">Yes</option>
+											<option value="0">No</option>
+										</select>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<select id="kindney" type="text" class="form-group">
+											<option>Kidney Failure</option>
+											<option value="1">Yes</option>
+											<option value="0">No</option>
+										</select>
+									</div>
+								</div>
+								
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<select id="skincancer" type="text" class="form-group">
+											<option>Skin Cancer</option>
+											<option value="1">Yes</option>
+											<option value="0">No</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<select id="smoking" type="text" class="form-group">
+											<option>Smoking</option>
+											<option value="1">Yes</option>
+											<option value="0">No</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-lg-6 col-md-6 col-12">
+									<div class="form-group">
+										<input name="number" type="text" id="bmi" placeholder="BMI">
+									</div>
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-12 text-centert">
+									<center><div class="form-group">
+										<label id="factorsmodel" style="cursor: pointer;">Know about factors?</label>
+										<br>
+										<div class="button">
+											<button type="button"  id="detectbtn" class="btn">Diagnose</button>
+										</div>
+									</div></center>
+								</div>
+								
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+
+		<button class="chatbot-toggler">
+		      <span class="material-symbols-rounded">mode_comment</span>
+		      <span class="material-symbols-outlined">close</span>
+		    </button>
+		    <div class="chatbot">
+		      <header>
+		        <h2 style="font-weight: bold; color: white">&#9764; Cardia</h2>
+		        <span class="close-btn material-symbols-outlined">close</span>
+		      </header>
+		      <ul class="chatbox">
+		        <li class="chat incoming">
+		          <span class="material-symbols-outlined">smart_toy</span>
+		          <p>Hello there 👋<br>This is cardia your heart health assistant., How can I help you today?</p>
+		        </li>
+		      </ul>
+		      <div class="chat-input">
+		        <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+		        <span id="send-btn" class="material-symbols-rounded">send</span>
+		      </div>
+		    </div>
+
+
+
+		    <div id="myModal2" class="resmodal" style="display: hide;">
+				  <div class="resmodal-content" style="width: 70%">
+				    <span style="text-align: right;" class="close">×</span>
+				    <div class="">
+				            <h3>Heart Disease Rist Factors!</h3><br>
+				            <div class="row" style="text-align: justify;">
+				            	<div class="col-md-6">
+				            		<p>
+				            			<span style="color: black"><b>Total Peripheral Heart Rate</b></span><br>
+				            			<b>Expansion:</b> Total Peripheral Heart Rate refers to the overall rate of the heartbeat, including both the heart's pumping action and the circulation of blood through the body's peripheral arteries.<br>
+										<b>Impact on Heart Health:</b> Total Peripheral Heart Rate can indicate the efficiency of the heart in pumping blood throughout the body. An elevated peripheral heart rate may suggest increased strain on the heart and may be associated with conditions such as hypertension, heart failure, or other cardiovascular diseases.
+										<br>
+										<b>Example:</b> 20
+									</p>
+				            	</div>
+				            	<div class="col-md-6">
+				            		<span style="color: black"><b>Mental Health</b></span><br>
+			            			<b>Expansion:</b> Mental Health refers to the psychological and emotional well-being of an individual, encompassing factors such as stress levels, depression, anxiety, and overall mental resilience.<br>
+									<b>Impact on Heart Health:</b>Mental health plays a significant role in heart health, as stress, depression, and anxiety can contribute to the development and progression of cardiovascular diseases. Chronic stress, in particular, may lead to elevated blood pressure, inflammation, and unhealthy lifestyle habits such as overeating or smoking, all of which can adversely affect heart health.
+									<br>
+									<b>Example:</b> 30 - 0
+				            	</div>
+				            	<br><hr>
+
+				            	<div class="col-md-6">
+				            		<p>
+				            			<span style="color: black"><b>Age</b></span><br>
+				            			<b>Expansion:</b> Age refers to the chronological age of an individual, measured in years from birth.<br>
+										<b>Impact on Heart Health:</b> Age is a major risk factor for heart disease, as the risk of developing cardiovascular conditions increases with advancing age. Aging leads to changes in the cardiovascular system, including stiffening of blood vessels, decreased elasticity of the heart muscle, and accumulation of plaque in the arteries, all of which contribute to an increased risk of heart disease.
+										<br>
+										<b>Example:</b> 45
+									</p>
+				            	</div>
+				            	<div class="col-md-6">
+				            		<span style="color: black"><b>Diabetes</b></span><br>
+			            			<b>Expansion:</b> Diabetes is a chronic metabolic disorder characterized by elevated blood sugar levels due to insufficient insulin production or ineffective insulin utilization by the body.<br>
+									<b>Impact on Heart Health:</b>Diabetes significantly increases the risk of developing heart disease. High blood sugar levels can damage blood vessels and nerves, leading to atherosclerosis (hardening and narrowing of the arteries), hypertension, and an increased risk of heart attack, stroke, and other cardiovascular complications.
+									<br>
+									<b>Example:</b> No, No but borderline, Yes but while praganancy, Yes
+				            	</div>
+
+				            	<div class="col-md-6">
+				            		<p>
+				            			<span style="color: black"><b>Difficulty In Walking</b></span><br>
+				            			<b>Expansion:</b> Difficulty Walking refers to impaired mobility or limitations in walking ability, which may result from various underlying health conditions or musculoskeletal disorders.<br>
+										<b>Impact on Heart Health:</b> Difficulty walking may indicate reduced physical activity levels, which is a significant risk factor for heart disease. Regular physical activity is essential for maintaining cardiovascular health, and individuals with limited mobility may be at a higher risk of developing heart-related complications due to a sedentary lifestyle.</p>
+										<b>Example:</b> Yes or No
+									</p>
+				            	</div>
+				            	<div class="col-md-6">
+				            		<span style="color: black"><b>Kidney Failure</b></span><br>
+			            			<b>Expansion:</b> Kidney Failure, also known as renal failure, occurs when the kidneys lose their ability to filter waste products and regulate fluid balance in the body.<br>
+									<b>Impact on Heart Health:</b>Chronic kidney disease is closely linked to an increased risk of cardiovascular disease. Kidney dysfunction can lead to electrolyte imbalances, fluid retention, hypertension, and inflammation, all of which contribute to the development of heart disease. Conversely, heart disease can also exacerbate kidney dysfunction, creating a vicious cycle of organ damage.
+									<br>
+									<b>Example:</b> Yes or No
+				            	</div>
+				            	<br><hr>
+
+				            	<div class="col-md-6">
+				            		<p>
+				            			<span style="color: black"><b>Skin Disease</b></span><br>
+				            			<b>Expansion:</b> Skin Cancer refers to the abnormal growth of skin cells, typically caused by excessive exposure to ultraviolet (UV) radiation from sunlight or artificial sources such as tanning beds.<br>
+										<b>Impact on Heart Health:</b>  While skin cancer itself may not directly affect heart health, certain treatments for advanced skin cancers, such as immunotherapy or targeted therapy, may have cardiovascular side effects. Additionally, individuals with a history of extensive sun exposure may have an increased risk of developing other types of cancer, some of which can metastasize to the heart or blood vessels.</p>
+										<b>Example:</b> Yes or No
+									</p>
+				            	</div>
+				            	<div class="col-md-6">
+				            		<span style="color: black"><b>Smoking</b></span><br>
+			            			<b>Expansion:</b> Smoking refers to the inhalation of tobacco smoke, which contains numerous harmful chemicals and carcinogens.<br>
+									<b>Impact on Heart Health:</b>Smoking is one of the most significant modifiable risk factors for heart disease. The toxins in tobacco smoke damage blood vessels, promote inflammation, increase blood pressure, reduce oxygen delivery to tissues, and contribute to the development of atherosclerosis. Quitting smoking is essential for reducing the risk of heart disease and improving overall cardiovascular health.
+									<br>
+									<b>Example:</b> Yes or No
+				            	</div>
+				            </div>
+				       </div>
+				</div>
+			</div>
+
+
+
+		    <div id="myModal" class="resmodal" style="display: hide;">
+				  <div class="resmodal-content">
+				    <span style="text-align: right;" class="close">×</span>
+				    <div id="iconhead">
+				        <div class="iconContainer" id="successalert" style="display: none;">
+				            <div id="successIcon" class="icon success">✔</div>
+				            <p class="verificationLabel">No Heart Disease!</p>
+				        </div>
+				        <div class="iconContainer" id="erroralert" style="display: none;">
+				            <div id="errorIcon" class="icon error">✖</div>
+				            <p class="verificationLabel">Heart Disease Found!</p>
+				        </div>
+				    </div>
+				    <br>
+				    <p style="font-size: 15px !important" id="errmessage">Enter all the details!</p>
+				    <br>
+				    <div class="row">
+				    	<div class="col-md-6">
+				    		<button class="okButton hide" id="reportbutton" >Report</button>
+				    	</div>
+				    	<div class="col-md-6">
+				    		<button class="okButton" id="okButton" style="background: red;">OK</button>
+				    	</div>
+				    </div>
+				</div>
+			</div>
+
+			<div id="reportfield" style="display: none;">
+	<div style="border:2px double black;width: 80%;margin: auto;height: 98%;">
+		<div style="border-bottom:1px solid black; padding-bottom: 10px">
+			<center>
+				<h3 style="margin: 5px 0px 0px 0px">Headt Disease Diagnosis</h3>
+				<span>(This is an computer generated report)</span>
+			</center>
+		</div>
+		<br>
+		<div style="clear: both; margin-bottom: 10px">
+			<div style="margin-top: 10px; text-align: center;"><label><b>----  Heart Disease Detection   ----</b></label></div>
+			<div style="float: left;width: 100%;padding: 10px;margin-left: 10px;">
+				<table>
+					<tr>
+						<td>Report ID</td>
+						<td>:</td>
+						<td id="treportid">CKD-010</td>
+					</tr>
+					<tr>
+						<td>Place</td>
+						<td>:</td>
+						<td id="tplace">AI Cardia Data Lab</td>
+					</tr>
+					<tr>
+						<td>Diagnosis</td>
+						<td>:</td>
+						<td id="tpred"></td>
+					</tr>
+					<tr>
+						<td>Date Time</td>
+						<td>:</td>
+						<td id="tdatetime"></td>
+					</tr>
+				</table>
+			</div>
+			<br>
+			<div style="margin-top: 10px; text-align: center;"><label><b>----  Test Samples   ----</b></label></div>
+			<div style="float: left;width: 100%;padding: 10px;margin-left: 10px;">
+				<table>
+    <tr>
+        <td>Total Peripheral Heart Rate</td>
+        <td>:</td>
+        <td id="tphr"> </td>
+    </tr>
+    <tr>
+        <td>Mental health</td>
+        <td>:</td>
+        <td id="tmental"> </td>
+    </tr>
+    <tr>
+        <td>Age</td>
+        <td>:</td>
+        <td id="tage"> </td>
+    </tr>
+    <tr>
+        <td>Diabetes</td>
+        <td>:</td>
+        <td id="tdiabetes"> </td>
+    </tr>
+    <tr>
+        <td>Stroke</td>
+        <td>:</td>
+        <td id="tstroke"> </td>
+    </tr>
+    <tr>
+        <td>Difficulty In walking</td>
+        <td>:</td>
+        <td id="tdiffwalk"> </td>
+    </tr>
+    <tr>
+        <td>Kidney Failure</td>
+        <td>:</td>
+        <td id="tkidney"> </td>
+    </tr>
+    <tr>
+        <td>Skin Disease</td>
+        <td>:</td>
+        <td id="tskin"> </td>
+    </tr>
+    <tr>
+        <td>Smoking</td>
+        <td>:</td>
+        <td id="tsmoking"> </td>
+    </tr>
+    <tr>
+        <td>BMI</td>
+        <td>:</td>
+        <td id="tbmi"> </td>
+    </tr>
+</table>
+
+			</div>
+		</div><br><br>
+		<h3>Tips for a Heart Disease-Free Life</h3>
+		  <ul>
+		    <li>Aim for at least 150 minutes of moderate-intensity aerobic exercise or 75 minutes of vigorous-intensity aerobic exercise per week, along with muscle-strengthening activities on two or more days per week.</li>
+		    <li>Follow a balanced diet rich in fruits, vegetables, whole grains, lean proteins, and healthy fats.</li>
+		    <li>Limit intake of processed foods, sugary beverages, salt, and saturated and trans fats, which can contribute to heart disease risk factors such as high blood pressure, high cholesterol, and obesity.</li>
+		    <li>Practice stress-reducing techniques such as deep breathing, meditation, yoga, or mindfulness to help lower your risk of heart disease.</li>
+		    <li>Avoid sugary beverages: Opt for water, herbal teas, or unsweetened beverages instead.</li>
+		    <li>Limit processed foods: Minimize your intake of processed and high-sugar foods.</li>
+		    <li>Quit smoking: Smoking increases the risk of cardio complications.</li>
+		    <li>Manage stress: Practice relaxation techniques such as meditation, deep breathing, or yoga.</li>
+		    <li>Get enough sleep: Aim for 7-9 hours of quality sleep each night.</li>
+		  </ul>
+		</div>
+		<br>
+		  
+
+		<div style="bottom: 30; position:absolute;left: 12%">
+			Report Downloaded on <span id="curdate"></span>
+		</div>
+	</div>
+
+		<!-- End Appointment -->
+
+
+		
+		<!-- jquery Min JS -->
+        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
+
+		<script src="{{ url_for('static', filename = 'js/jquery-ui.min.js') }}"></script>
+		<!-- Easing JS -->
+        <script src="{{ url_for('static', filename = 'js/easing.js') }}"></script>
+		<!-- Color JS -->
+		<script src="{{ url_for('static', filename = 'js/popper.min.js') }}"></script>
+		<!-- Bootstrap Datepicker JS -->
+		<script src="{{ url_for('static', filename = 'js/bootstrap-datepicker.js') }}"></script>
+		<!-- Bootstrap JS -->
+		<script src="{{ url_for('static', filename = 'js/bootstrap.min.js') }}"></script>
+		<!-- Main JS -->
+		<script src="{{ url_for('static', filename = 'js/main.js') }}"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+
+	            $("#detectbtn").click(function(){
+	            	
+	            //     let patientname = $("#patientname").val();
+	                let phr         = $("#phr").val();
+	                let mental      = $("#mental").val();
+	                let age     = $("#age").val();
+	                let diabetes    = $("#diabetes").val();
+	                let stroke         = $("#stroke").val();
+	                let diffwalk      = $("#diffwalk").val();
+	                let kindney    = $("#kindney").val();
+	                let skincancer  = $("#skincancer").val();
+	                let smoking    = $("#smoking").val();
+	                let bmi    = $("#bmi").val();
+
+	                if (phr == '' || mental == '' || age == '' || diabetes == '' || stroke == '' || diffwalk == '' || kindney == '' || skincancer == '' || smoking == '' || bmi == ''){
+
+	                	$("#successalert").hide()
+	                	$("#reportbutton").hide()
+	                	$("#erroralert").hide()
+	                	$("#errmessage").html("Enter all the details!")
+		                $("#okButton").css("background","red")
+		                $("#acctable").hide()
+		                $("#accfield").hide()
+		                $("#myModal").show()
+
+	                }else{
+
+		                $.ajax({ 
+		                    url:"/detect", 
+		                    type: "post", 
+		                    dataType: 'json',
+		                    data: {"phr":phr, "mental":mental, "age":age, "diabetes":diabetes, "stroke":stroke, "diffwalk":diffwalk, "kindney":kindney, "skincancer":skincancer, "smoking":smoking, "bmi":bmi},
+		                    beforeSend: function(){
+
+		                      },
+		                      success: function(output){
+		                      	if (output["prediction"] == 0){
+			                      		var msg = "The given sample has no heart disease!"
+			                      		$("#successalert").show()
+			                      		$("#erroralert").hide()
+			                      		$("#errmessage").html(msg)
+			                      		$("#okButton").css("background","green")
+			                      		$("#tpred").html("Hear Disease - Negative")
+			                      	}else{
+			                      		var msg = "The given sample has heart disease!"
+			                      		$("#successalert").hide()
+			                      		$("#erroralert").show()
+			                      		$("#errmessage").html(msg)
+			                      		$("#okButton").css("background","red")
+			                      		$("#tpred").html("Heart Disease - Positive")
+			                      	}
+
+
+			                      	let currenttime = new Date();
+			    					$("#curdate").html(currenttime);
+			    					$("#tdatetime").html(currenttime);
+
+			                      	$("#tphr").html(phr);
+									$("#tmental").html(mental);
+									$("#tage").html(age);
+									$("#tdiabetes").html(diabat(diabetes));
+									$("#tstroke").html(yesorno(stroke));
+									$("#tdiffwalk").html(yesorno(diffwalk));
+									$("#tkidney").html(yesorno(kindney));
+									$("#tskin").html(yesorno(skincancer));
+									$("#tsmoking").html(yesorno(smoking));
+									$("#tbmi").html(bmi);
+
+	                				$("#reportbutton").show()
+
+
+		            			    $("#myModal").show()
+
+
+		                      },
+		                      error:function(){
+		                            $(".loader").hide();
+		                            alert("Something went wrong! Please try again.")
+		                          }
+		                    });        
+		                }
+		                });
+
+	            function yesorno(str){
+	            	if(str == 0){
+	            		return "No"
+	            	}else{
+	            		return "Yes"
+	            	}
+	            }
+
+	            function diabat(str){
+	            	if(str == 0){
+	            		return "No (Borderline)"
+	            	}else if(str == 1){
+	            		return "No"
+	            	}else if(str == 2){
+	            		return "Yes, (Praganancy)"
+	            	}else if(str == 3){
+	            		return "Yes"
+	            	}
+	            }
+
+
+	            const $chatbox = $(".chatbox");
+		        const $chatInput = $(".chat-input textarea");
+
+		        let userMessage = null; // Variable to store user's message
+		        const inputInitHeight = $chatInput.prop("scrollHeight");
+
+		        const createChatLi = (message, className) => {
+		            const $chatLi = $("<li>").addClass("chat").addClass(className);
+		            let chatContent = className === "outgoing" ? "<p></p>" : '<span class="material-symbols-outlined">smart_toy</span><p></p>';
+		            $chatLi.html(chatContent);
+		            $chatLi.find("p").text(message);
+		            return $chatLi;
+		        };
+
+		        const generateResponse = (chatElement) => {
+		            const $messageElement = chatElement.find("p");
+	           		$.ajax({ 
+	                    url:"/botresponse", 
+	                    type: "post", 
+	                    dataType: 'json',
+	                    data: {"userMessage":userMessage},
+	                    beforeSend: function(){
+
+		                },
+	                    success: function(output){
+	                    	$messageElement.text(output);
+	                    },
+	                    error:function(){
+	                    	output='Sorry! Unable to generate response. Try again'
+	                    	$messageElement.text(output);
+	                    }
+	                 });
+
+		        };
+
+		        const handleChat = () => {
+		            userMessage = $chatInput.val().trim(); 
+		            if (!userMessage) return;
+		            $chatInput.val("");
+		            $chatInput.css("height", `${inputInitHeight}px`);
+
+		            $chatbox.append(createChatLi(userMessage, "outgoing"));
+		            $chatbox.scrollTop($chatbox.prop("scrollHeight"));
+
+		            setTimeout(() => {
+		                const $incomingChatLi = createChatLi("Thinking...", "incoming");
+		                $chatbox.append($incomingChatLi);
+		                $chatbox.scrollTop($chatbox.prop("scrollHeight"));
+		                generateResponse($incomingChatLi);
+		            }, 600);
+		        };
+
+		        $chatInput.on("input", () => {
+		            $chatInput.css("height", `${inputInitHeight}px`);
+		            $chatInput.css("height", `${$chatInput.prop("scrollHeight")}px`);
+		        });
+
+		        $chatInput.on("keydown", (e) => {
+
+		            if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+		                e.preventDefault();
+		                handleChat();
+		            }
+		        });
+
+		        $(".chat-input span").on("click", handleChat);
+		        $(".close-btn").on("click", () => $("body").removeClass("show-chatbot"));
+		        $(".chatbot-toggler").on("click", () => $("body").toggleClass("show-chatbot"));
+
+		        $("#factorsmodel").click(function(){
+		        	$("#myModal2").show()
+		        })
+
+
+        $("#okButton").click(function(){
+            	$('#myModal').hide();
+            	$('#myModal2').hide();
+	    })
+        $(".close").click(function(){
+            $('#myModal').hide();
+            $('#myModal2').hide();
+        })
+
+	        $("#reportbutton").click(function(){
+	        	var accidentReport = $("#reportfield").html();
+		    	var printWindow = window.open('', '', 'height=400,width=800');
+		   		printWindow.document.write(accidentReport);
+		    	printWindow.document.close();
+		    	printWindow.print();
+		    	printWindow.close();
+	        })
+
+	});
+
+          
+
+
+		
+		</script>
+    </body>
+</html>
